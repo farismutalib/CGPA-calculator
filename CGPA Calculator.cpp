@@ -1,13 +1,13 @@
  
-    #include <iostream>
-    #include <iomanip>
-    #include <fstream>
-    #include <limits>
+        #include <iostream>
+        #include <iomanip>
+        #include <fstream>
+        #include <limits>
 
-    using namespace std;
+        using namespace std;
 
-    class student
-    {
+        class student
+        {
 	string name;
 	string id;
 	int credit[46];
@@ -83,15 +83,14 @@
     	return name;
 	}
     	
-    string getId()
+        string getId()
 	{
     	return id;
 	} };
 
-    int main()
-    {
-    	
-	system("color 07");
+        int main()
+        {
+	/*system("color 07");
  	cout<<"\n\n\n\tPlease wait while loading ..\n\n";
  	char a=177, b=219;
 	cout<<"\t      ";
@@ -100,19 +99,17 @@
 	cout<<"\r";
  	cout<<"\t      ";
  	for (int i=0;i<=12;i++)
- 	{
-	  cout<<b;
-	  for (int j=0;j<=1e8;j++);
-	}
+ 	{ cout<<b;
+	  for (int j=0;j<=1e8;j++); }*/
 	
 	system("cls");
 	
-    ofstream myfile;
-    myfile.open("Transcript.txt");
+        ofstream myfile;
+        myfile.open("Transcript.txt");
 	
 	int Choice;
 
-    cout<<"\n\t\t       UNIVERSITI TEKNOLOGI MALAYSIA"<<endl;
+        cout<<"\n\t\t       UNIVERSITI TEKNOLOGI MALAYSIA"<<endl;
 	cout<<"\t\t    STUDENT'S ACADEMIC TRANSCRIPT (CGPA)"<<endl;
 	cout<<"\n\t============================================================"<<endl;
 	
@@ -124,9 +121,9 @@
 	cout<<"\t5) Faculty of Built Environment"<<endl;
 	
 	cout<<"\n\tPlease enter the number of your faculty: ";
-    cin>>Choice;
+        cin>>Choice;
     
-    system("cls");
+        system("cls");
 	
 	cout<<"\n\t\t       UNIVERSITI TEKNOLOGI MALAYSIA"<<endl;
 	cout<<"\t\t    STUDENT'S ACADEMIC TRANSCRIPT (CGPA)"<<endl;
@@ -161,15 +158,14 @@
 	cout<<"\t3) SCSD (Bioinformatics)"<<endl;
 	cout<<"\t4) SCSP (Graphics & Multimedia Software)"<<endl;
 
-    cout<<"\n\tPlease enter the number of your course: ";
-    cin>>Choice;
-    if (Choice !=2) {cout<<"\n\tChoice not valid. Please exit ! xD";
-    	return 0;
-	}
+        cout<<"\n\tPlease enter the number of your course: ";
+        cin>>Choice;
+        if (Choice !=2) {cout<<"\n\tChoice not valid. Please exit ! xD";
+    	return 0;  }
 
-    system("cls");
+        system("cls");
     
-    myfile<<"\n\t\t       UNIVERSITI TEKNOLOGI MALAYSIA"<<endl;
+        myfile<<"\n\t\t       UNIVERSITI TEKNOLOGI MALAYSIA"<<endl;
 	myfile<<"\t\t    STUDENT'S ACADEMIC TRANSCRIPT (CGPA)"<<endl;
 	myfile<<"\n\t============================================================"<<endl;
 	
@@ -182,7 +178,7 @@
 	
 	myfile<<"\tCourse : SCSR (Computer Network & Security)"<<endl;
     
-    switch (Choice){
+        switch (Choice){
 	case 1 :
 	cout<<"\tCourse: SCSJ (Software Engineering)"<<endl;
 	break;
@@ -215,7 +211,7 @@
 	
 	getline (cin,studentname);
 	bFail=cin.fail();
-    }  while (bFail==true);
+        }  while (bFail==true);
 	
 	cout<<"\tMatric Number: ";
 	cin>>matricid;
@@ -289,14 +285,14 @@
 	cout << "\n\n\tNumber of Subjects: ";
 	cin >> currentSub;
 		
-	cout<<"\n\t============================================================"<<endl;
-						cout<<"\n\t\t\t\t SEMESTER " << i+1 <<endl;
-	cout<<"\n\t============================================================"<<endl;
+	cout<<"\t============================================================"<<endl;
+						cout<<"\t\t\t\t SEMESTER " << i+1 <<endl;
+	cout<<"\t============================================================"<<endl;
 	cout<<"\tLIST OF SUBJECTS :\t\t       CREDIT HRS:"<<"  POINTER:"<<endl;
 	
 	myfile<<"\n\t============================================================"<<endl;
-						myfile<<"\n\t\t\t\t SEMESTER " << i+1 <<endl;
-	myfile<<"\n\t============================================================"<<endl;
+						myfile<<"\t\t\t\t SEMESTER " << i+1 <<endl;
+	myfile<<"\t============================================================"<<endl;
 	myfile<<"\tLIST OF SUBJECTS :\t\t       CREDIT HRS:"<<"  POINTER:"<<endl;
 
 		for(int j=0; j < currentSub; j++)
@@ -306,17 +302,16 @@
 
 			cin >> credit[k];
 			myfile << credit[k];
-		    cout<<"\t\t\t\t\t\t\t      ";
+		        cout<<"\t\t\t\t\t\t\t      ";
 		    
-		    cin >> pointer[k];
-		    myfile <<"\t\t"<<pointer[k]<<endl;
+		        cin >> pointer[k];
+		        myfile <<"\t\t"<<pointer[k]<<endl;
 			totalCredit = totalCredit + credit[k];
 			st1.setTotalCredit(totalCredit);
 			x = (credit[k]*pointer[k]);
 			credpoint = credpoint + x;
 			k++;	
 		}
-		
 		gpa[i] = st1.CalculateGpa(credpoint,totalCredit);
 		sumTotalCredit = sumTotalCredit+totalCredit;
 		sumCredPoint = sumCredPoint + credpoint;
@@ -325,12 +320,11 @@
 		credpoint = 0;
 		totalCredit=0;
 	
-	cout<<"\n\t============================================================"<<endl;
+	cout<<"\t============================================================"<<endl;
 	cout << "\t\t\t\t         GPA = "<< gpa[i]<<" /"<<" CGPA = "<< cgpa << endl;
 	
-	myfile<<"\n\t============================================================"<<endl;
-	myfile<< "\t\t\t\t         GPA = "<< gpa[i]<<" /"<<" CGPA = "<< cgpa << endl;
-	
+	myfile<<"\t============================================================"<<endl;
+	myfile<< "\t\t\t\t         GPA = "<< gpa[i]<<" /"<<" CGPA = "<< cgpa << endl;   
 	}
 	cout<<"\n\tStudent Name: "<<st1.getName()<<endl;
 	cout<<"\tMatric Number: "<<st1.getId()<<endl;
